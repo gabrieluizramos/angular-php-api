@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="membros" ng-controller="homeCtrl">
+	<ul>
+		<li ng-repeat="membro in membros">
+			<span data-contato="nome">{{ membro.nome }}</span>
+			<span data-contato="idade">{{ membro.idade }}</span>
+		</li>
+	</ul>
+	<form name="formMembros">
+		<input type="text" ng-model="novoMembro.nome">
+		<input type="text" ng-model="novoMembro.idade">
+		<button class="btn btn-primary" ng-click="salvarMembros( novoMembro )">adicionar</button>
+	</form>
+</body>
+<script src="js/lib/angular/angular.min.js"></script>
+<script src="js/controllers/mainCtrl.js"></script>
+<script src="js/services/APImembros.js"></script>
+</html>

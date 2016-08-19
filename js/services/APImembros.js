@@ -6,7 +6,7 @@ angular.module( 'membros' ).factory( 'APImembros' , function( $http ){
 	}
 	
 	var postMembros = function( membros ){
-		return $http.post( 'membros.php' , membros );
+		return $http.post( 'membros.php' , { membros : membros } );
 	}
 	
 	return {

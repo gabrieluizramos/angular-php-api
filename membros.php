@@ -20,8 +20,9 @@ $membro = new Membro();
 $reqType = $_SERVER['REQUEST_METHOD'];
 
 if( $reqType == 'POST' ){
-	$postdata = file_get_contents("php://input");
-	$novosMembros = $postdata;
+	$postdata = file_get_contents( "php://input" );
+	$postdata = json_decode( $postdata );
+	$novosMembros = $postdata->membros;
 	if ( $membro->salvaMembros( $novosMembros ) ) {
 		echo true;
 	}
